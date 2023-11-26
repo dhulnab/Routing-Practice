@@ -1,0 +1,22 @@
+.coverBox {
+  position: relative;
+
+}
+
+.cover {
+  height: 500px;
+  width: 100%;
+  background-color: #eee;
+}
+.title {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  padding-top: 200px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.194), 0, 0);
+}
+.title .pTitle {
+  font-size: 35px;
+}

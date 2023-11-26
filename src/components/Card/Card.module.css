@@ -1,0 +1,54 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 32px;
+}
+.card {
+  height: 320px;
+}
+.card .img {
+  height: 220px;
+  background-color: #d9d9d9;
+  position: relative;
+}
+.head .p {
+  color: #666666;
+}
+.head {
+  margin: 10px 0;
+  padding: 0;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.link {
+  text-decoration: none;
+  color: #0000FF;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #666666;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 215px 0 20px 0;
+}

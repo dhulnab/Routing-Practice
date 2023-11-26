@@ -1,0 +1,25 @@
+.head {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head p {
+  margin-top: 6px;
+  font-size: 24px;
+  color: #666666;
+}
+.head span {
+  font-size: 20px;
+  color: #666666;
+}
+.cover {
+  height: 310px;
+  width: 100%;
+  background-color: #eee;
+  margin: 20px 0;
+  position: relative;
+}
+.cover .img {
+  object-fit: cover;
+}
