@@ -22,7 +22,12 @@ const Page = async ({ params }) => {
             <span>{dayjs(data.blog.created_at).format("MMMM DD, YYYY")}</span>
           </div>
           <div className={styles.cover}>
-            <Image src={data.blog.photo_url} className={styles.img} alt="error" fill />
+            <Image
+              src={data.blog.photo_url}
+              className={styles.img}
+              alt="error"
+              fill
+            />
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: data.blog.content_html }}

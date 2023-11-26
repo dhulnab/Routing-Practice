@@ -10,10 +10,12 @@ const Card = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const getData = () => {
-    fetch(`https://api.slingacademy.com/v1/sample-data/blog-posts`).then(
-      (res) => res.json().then((data) => setBlogs(data.blogs))
-    );
-    setLoading(false);
+    fetch(`https://api.slingacademy.com/v1/sample-data/blog-posts`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(data.blogs);
+        setLoading(false);
+      });
   };
   useEffect(() => {
     getData();
