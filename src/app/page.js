@@ -7,15 +7,19 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <div className={styles.up}>
-        <Cover />
-        <div className={styles.down}>
-          <Card />
-          <Footer />
-        </div>
+    <>
+      <div className={styles.header}>
+        <Header />
       </div>
-    </main>
+      <main className={styles.main}>
+        <div className={styles.up}>
+          <Cover />
+          <div className={styles.down}>
+            <Card />
+            <Footer />
+          </div>
+        </div>
+      </main>
+    </>
   );
 }

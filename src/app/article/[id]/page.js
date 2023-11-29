@@ -11,30 +11,34 @@ const Page = async ({ params }) => {
     const data = await getData(params.id);
 
     return (
-      <main className={styles.main}>
-        <Header />
-        <Container>
-          <div className={styles.head}>
-            <div>
-              <h1>{data.blog.title}</h1>
-              <p>{data.blog.category}</p>
+      <>
+        <div className={styles.header}>
+          <Header />
+        </div>
+        <main className={styles.main}>
+          <Container>
+            <div className={styles.head}>
+              <div>
+                <h1>{data.blog.title}</h1>
+                <p>{data.blog.category}</p>
+              </div>
+              <span>{dayjs(data.blog.created_at).format("MMMM DD, YYYY")}</span>
             </div>
-            <span>{dayjs(data.blog.created_at).format("MMMM DD, YYYY")}</span>
-          </div>
-          <div className={styles.cover}>
-            <Image
-              src={data.blog.photo_url}
-              className={styles.img}
-              alt="error"
-              fill
-            />
-          </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: data.blog.content_html }}
-          ></div>
-        </Container>
-        <Footer />
-      </main>
+            <div className={styles.cover}>
+              <Image
+                src={data.blog.photo_url}
+                className={styles.img}
+                alt="error"
+                fill
+              />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{ __html: data.blog.content_html }}
+            ></div>
+          </Container>
+          <Footer />
+        </main>
+      </>
     );
   } catch (error) {
     console.error("Error fetching data:", error.message);

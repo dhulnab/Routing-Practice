@@ -1,6 +1,6 @@
 .coverBox {
   position: relative;
-
+  z-index: 1;
 }
 
 .cover {
@@ -15,8 +15,18 @@
   right: 0;
   padding-top: 200px;
   height: 300px;
-  background-color: rgba(0, 0, 0, 0.194), 0, 0);
+  z-index: 3;
 }
 .title .pTitle {
   font-size: 35px;
+}
+@media screen and (max-width: 1240px) {
+  .title .pTitle {
+    font-size: 31px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .title .pTitle {
+    font-size: 28px;
+  }
 }
