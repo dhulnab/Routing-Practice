@@ -5,21 +5,25 @@ import Container from "../Container/Container";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import Image from "next/image";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Card = () => {
+  const [offset, setOffset] = useState(0);
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const getData = () => {
-    fetch(`https://api.slingacademy.com/v1/sample-data/blog-posts`)
+    fetch(
+      `https://api.slingacademy.com/v1/sample-data/blog-posts?offset=${offset}&limit=10`
+    )
       .then((res) => res.json())
       .then((data) => {
-        setBlogs(data.blogs);
+        setBlogs([...blogs, ...data.blogs]);
         setLoading(false);
       });
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [offset]);
   console.log(blogs);
   return (
     <>
@@ -29,30 +33,37 @@ const Card = () => {
         </div>
       ) : null}
       <Container>
-        <div className={styles.grid}>
-          {blogs.map((blog) => (
-            <div key={blog.id} className={styles.card}>
-              <div className={styles.img}>
-                <Image
-                  src={blog.photo_url}
-                  className={styles.subImg}
-                  fill
-                  alt="img error"
-                />
+        <InfiniteScroll
+          dataLength={blogs.length}
+          next={() => setOffset(offset + 10)}
+          hasMore={true}
+          className="scroll"
+        >
+          <div className={styles.grid}>
+            {blogs.map((blog) => (
+              <div key={blog.id} className={styles.card}>
+                <div className={styles.img}>
+                  <Image
+                    src={blog.photo_url}
+                    className={styles.subImg}
+                    fill
+                    alt="img error"
+                  />
+                </div>
+                <div className={styles.head}>
+                  <h2>{blog.title}</h2>
+                  <p className={styles.p}>{blog.category}</p>
+                </div>
+                <div className={styles.footer}>
+                  <Link className={styles.link} href={`/article/${blog.id}`}>
+                    Read Article
+                  </Link>
+                  <span>{dayjs(blog.created_at).format("MMMM DD, YYYY")}</span>
+                </div>
               </div>
-              <div className={styles.head}>
-                <h2>{blog.title}</h2>
-                <p className={styles.p}>{blog.category}</p>
-              </div>
-              <div className={styles.footer}>
-                <Link className={styles.link} href={`/article/${blog.id}`}>
-                  Read Article
-                </Link>
-                <span>{dayjs(blog.created_at).format("MMMM DD, YYYY")}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </InfiniteScroll>
       </Container>
     </>
   );

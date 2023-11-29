@@ -13,10 +13,6 @@ h6,
 p {
   padding-top: 8px;
 }
-/* .header {
-  position: sticky;
-  z-index: 9;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-} */
+::-webkit-scrollbar {
+  display: none;
+}
