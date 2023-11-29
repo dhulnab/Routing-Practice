@@ -30,6 +30,14 @@
 .cover .img {
   object-fit: cover;
 }
+.dots {
+  font-size: 40px;
+  color: #666666;
+  text-align: center;
+}
+.txt {
+  color: #666666;
+}
 
 .loader {
   width: 48px;

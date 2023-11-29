@@ -13,7 +13,7 @@ const Card = () => {
   const [loading, setLoading] = useState(true);
   const getData = () => {
     fetch(
-      `https://api.slingacademy.com/v1/sample-data/blog-posts?offset=${offset}&limit=10`
+      `https://api.slingacademy.com/v1/sample-data/blog-posts?offset=${offset}&limit=12`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -24,7 +24,6 @@ const Card = () => {
   useEffect(() => {
     getData();
   }, [offset]);
-  console.log(blogs);
   return (
     <>
       {loading ? (
@@ -35,7 +34,7 @@ const Card = () => {
       <Container>
         <InfiniteScroll
           dataLength={blogs.length}
-          next={() => setOffset(offset + 10)}
+          next={() => setOffset(offset + 12)}
           hasMore={true}
           className="scroll"
         >
@@ -47,6 +46,8 @@ const Card = () => {
                     src={blog.photo_url}
                     className={styles.subImg}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={true} // the image will be loaded as soon as possible, before discovering the HTML form browser...no lazy load
                     alt="img error"
                   />
                 </div>

@@ -1,6 +1,4 @@
-import Card from "../Card/Card";
 import Container from "../Container/Container";
-import Space from "../Space/Space";
 import styles from "./Cover.module.css";
 
 const Cover = () => {
@@ -13,7 +11,6 @@ const Cover = () => {
             <h1>Simple Blog.</h1>
             <p className={styles.pTitle}>A blog created by Aon 2023</p>
           </Container>
-            {/* <Card/> */}
         </div>
       </div>
     </div>

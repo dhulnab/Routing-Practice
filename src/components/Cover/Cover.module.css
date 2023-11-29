@@ -17,6 +17,9 @@
   height: 300px;
   z-index: 3;
 }
+.title h1 {
+  font-size: 46px;
+}
 .title .pTitle {
   font-size: 35px;
 }
@@ -24,9 +27,15 @@
   .title .pTitle {
     font-size: 31px;
   }
+  .title h1 {
+    font-size: 46px;
+  }
 }
 @media screen and (max-width: 480px) {
   .title .pTitle {
-    font-size: 28px;
+    font-size: 26px;
+  }
+  .title h1 {
+    font-size: 36px;
   }
 }

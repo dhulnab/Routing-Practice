@@ -9,6 +9,7 @@ import Image from "next/image";
 const Page = async ({ params }) => {
   try {
     const data = await getData(params.id);
+    const slicedContent = data.blog.content_text.slice(0, 673);
 
     return (
       <>
@@ -32,6 +33,14 @@ const Page = async ({ params }) => {
                 fill
               />
             </div>
+            <span
+              className={styles.txt}
+              dangerouslySetInnerHTML={{ __html: slicedContent }}
+            ></span>
+            <span>...</span>
+            <br />
+            <div className={styles.dots}>. . . . . . .</div>
+            <br />
             <div
               dangerouslySetInnerHTML={{ __html: data.blog.content_html }}
             ></div>
