@@ -11,13 +11,13 @@ const Footer = () => {
         <div className={styles.footer}>
           <div className={styles.text}>All Rights Reserved - Aon2023</div>
           <div className={styles.icons}>
-            <a href="https://web.facebook.com/Dhulfiqar.ali.56">
+            <a href="https://web.facebook.com/Dhulfiqar.ali.56" target="_blank">
               <FaFacebookSquare className={styles.icon} />
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <FaSquareTwitter className={styles.icon} />
             </a>
-            <a href="https://www.instagram.com/f18__b/">
+            <a href="https://www.instagram.com/f18__b/" target="_blank">
               <TiSocialInstagram className={styles.icon} />
             </a>
           </div>

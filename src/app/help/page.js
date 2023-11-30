@@ -42,13 +42,13 @@ const page = () => {
           <h3>Contact Us.</h3>
           <h5>Send us a message and we will answer it as soon as possible :</h5>
           <div className={styles.icons}>
-            <a href="https://web.facebook.com/Dhulfiqar.ali.56">
+            <a href="https://web.facebook.com/Dhulfiqar.ali.56" target="_blank">
               <FaFacebookSquare className={styles.icon} />
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <FaSquareTwitter className={styles.icon} />
             </a>
-            <a href="https://www.instagram.com/f18__b/">
+            <a href="https://www.instagram.com/f18__b/" target="_blank">
               <TiSocialInstagram className={styles.icon} />
             </a>
           </div>
