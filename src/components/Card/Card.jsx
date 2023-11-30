@@ -47,7 +47,7 @@ const Card = () => {
                     className={styles.subImg}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={true} // the image will be loaded as soon as possible, before discovering the HTML form browser...no lazy load
+                    priority={false} // when its (true) the image will be loaded as soon as possible, before discovering the HTML form browser...no lazy load
                     alt="img error"
                   />
                 </div>

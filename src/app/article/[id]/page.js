@@ -6,6 +6,25 @@ import Container from "@/components/Container/Container";
 import dayjs from "dayjs";
 import Image from "next/image";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const data = await getData(id);
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: data.blog.title,
+    description: data.blog.description,
+    openGraph: {
+      images: [data.blog.photo_url, ...previousImages],
+    },
+  };
+}
+
 const Page = async ({ params }) => {
   try {
     const data = await getData(params.id);
