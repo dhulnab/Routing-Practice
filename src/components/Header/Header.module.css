@@ -1,6 +1,11 @@
 .header {
   background-color: #ffffff;
   border-bottom: 1px solid black;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 99;
 }
 
 .content {
@@ -18,9 +23,16 @@
 }
 .content ul li .link {
   text-decoration: none;
-  color: black;
+  color: rgba(52, 52, 52, 0.9);
   font-size: 20px;
   font-weight: 400;
+  transition: font-weight 0.5ms 0.5ms;
+}
+.content ul li .link:hover {
+color: black;
+}
+.active .link{
+  font-weight: bold !important;
 }
 @media screen and (max-width: 1240px) {
   .content ul {

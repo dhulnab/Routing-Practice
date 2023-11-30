@@ -1,32 +1,43 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px 32px;
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
-.card {
-  height: 320px;
-}
-.card .img {
-  height: 220px;
-  background-color: #d9d9d9;
+.img {
+  margin-top: 130px;
   position: relative;
+  width: 100%;
+  height: 400px;
 }
-.head .p {
-  color: #666666;
+.content {
+  margin-top: 35px;
+
 }
-.head {
-  margin: 10px 0;
-  padding: 0;
+.content div{
+  margin-top: 35px;
+  margin-bottom: 25px;
 }
-.footer {
+.content h3 {
+  margin-top: 30px;
+}
+.content h2 {
+  margin-top: 30px;
+}
+.icons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
-.link {
+.icons a {
   text-decoration: none;
-  color: #0000ff;
+  color: black;
 }
+.icon {
+  font-size: 40px;
+}
+
 .loader {
   width: 48px;
   height: 48px;
@@ -46,23 +57,14 @@
     transform: rotate(360deg);
   }
 }
-
 .loading {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 235px 0 20px 0;
-}
-
-@media screen and (max-width: 1240px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px 40px;
-  }
+  height: 900px;
 }
 @media screen and (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 60px 0;
+  .loading {
+    height: 800px;
   }
 }

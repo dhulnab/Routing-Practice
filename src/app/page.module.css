@@ -3,16 +3,9 @@
 }
 .down {
   position: absolute;
-  top: 400px;
+  top: 450px;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 5;
 }
 
-.header {
-  position: sticky;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  z-index: 9999;
-}

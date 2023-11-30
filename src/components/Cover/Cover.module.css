@@ -4,7 +4,7 @@
 }
 
 .cover {
-  height: 500px;
+  height: 550px;
   width: 100%;
   background-color: #eee;
 }
@@ -13,9 +13,9 @@
   top: 0px;
   left: 0;
   right: 0;
-  padding-top: 200px;
-  height: 300px;
-  z-index: 3;
+  padding-top: 240px;
+  height: 330px;
+  /* z-index: 3; */
 }
 .title h1 {
   font-size: 46px;
