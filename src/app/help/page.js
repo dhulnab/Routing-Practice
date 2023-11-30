@@ -45,10 +45,10 @@ const page = () => {
             <a href="https://web.facebook.com/Dhulfiqar.ali.56">
               <FaFacebookSquare className={styles.icon} />
             </a>
-            <a href="https://www.instagram.com/f18__b/">
+            <a href="#">
               <FaSquareTwitter className={styles.icon} />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/f18__b/">
               <TiSocialInstagram className={styles.icon} />
             </a>
           </div>
